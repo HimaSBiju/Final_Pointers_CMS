@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Pointers_CMS.Repository
+namespace Pointers_CMS.Repository.A_Repository
 {
     public interface A_ILabTestRepository
     {

@@ -3,8 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System;
-using Pointers_CMS.Repository;
 using Pointers_CMS.Models;
+using Pointers_CMS.Repository.A_Repository;
 
 namespace Pointers_CMS.Controllers
 {

@@ -3,9 +3,9 @@ using Pointers_CMS.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Pointers_CMS.Repository
+namespace Pointers_CMS.Repository.A_Repository
 {
-    public class A_MedicineRepository:A_IMedicineRepository
+    public class A_MedicineRepository : A_IMedicineRepository
     {
         private readonly DB_CMSContext _Context;
         public A_MedicineRepository(DB_CMSContext context)

@@ -5,9 +5,9 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Pointers_CMS.Repository
+namespace Pointers_CMS.Repository.A_Repository
 {
-    public class A_LabTestRepository:A_ILabTestRepository
+    public class A_LabTestRepository : A_ILabTestRepository
     {
         private readonly DB_CMSContext _Context;
         public A_LabTestRepository(DB_CMSContext context)

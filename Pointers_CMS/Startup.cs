@@ -8,7 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Pointers_CMS.Models;
-using Pointers_CMS.Repository;
+using Pointers_CMS.Repository.A_Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -1,6 +1,7 @@
 ﻿namespace Pointers_CMS.Repository.LabRepository
 {
-    public class LabTestsRepository
+
+    public class LabTestsRepository : ILabTestsRepository
     {
     }
 }

@@ -8,8 +8,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Pointers_CMS.Models;
-using Pointers_CMS.Repository.LabRepository;
 using Pointers_CMS.Repository.ReceptionistRepository;
+using Pointers_CMS.Repository.A_Repository;
+using Pointers_CMS.Repository.LabRepository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,7 @@ namespace Pointers_CMS
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+
         }
 
         public IConfiguration Configuration { get; }
@@ -35,14 +37,22 @@ namespace Pointers_CMS
             db.UseSqlServer(Configuration.GetConnectionString("DB_CMSConnection")));
 
 
-            //Lab Technician 
-            services.AddScoped<ILabTestsRepository, ILabTestsRepository>();
-            services.AddScoped<ILabReportsRepository, ILabReportsRepository>();
+
 
             //Receptionist
             services.AddScoped<IPatientRepository, PatientRepository>();
             services.AddScoped<IRAppointmentRepository, RAppointmentRepository>();
 
+
+            //Lab Technician
+            services.AddScoped<ILabTestsRepository, ILabTestsRepository>();
+            services.AddScoped<ILabReportsRepository, ILabReportsRepository>();
+
+            //Admin
+            services.AddScoped<A_ILabTestRepository, A_LabTestRepository>();
+            services.AddScoped<A_IMedicineRepository, A_MedicineRepository>();
+            services.AddScoped<A_IStaffRepository, A_StaffRepository>();
+            services.AddScoped<ILoginRepository, LoginRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

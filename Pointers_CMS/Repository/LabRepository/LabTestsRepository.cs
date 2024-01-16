@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace Pointers_CMS.Repository.LabRepository
 {
+
     public class LabTestsRepository : ILabTestsRepository
     {
         private readonly DB_CMSContext _dbContext;

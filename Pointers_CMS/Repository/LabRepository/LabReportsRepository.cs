@@ -8,7 +8,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Pointers_CMS.Repository.LabRepository
 {
+
     public class LabReportsRepository: ILabReportsRepository
+
     {
         private readonly DB_CMSContext _dbContext;
         public LabReportsRepository(DB_CMSContext dbContext)

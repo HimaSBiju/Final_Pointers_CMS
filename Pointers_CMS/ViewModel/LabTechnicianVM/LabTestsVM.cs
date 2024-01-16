@@ -1,4 +1,4 @@
-﻿namespace Pointers_CMS.ViewModel.LabTechniciamVM
+﻿namespace Pointers_CMS.ViewModel.LabTechnicianVM
 {
     public class LabTestsVM
     {

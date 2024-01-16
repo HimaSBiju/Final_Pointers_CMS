@@ -5,7 +5,12 @@ using System.Threading.Tasks;
 
 namespace Pointers_CMS.Repository.LabRepository
 {
+
+
     public interface ILabTestsRepository
+ 
+
+
     {
         Task<List<LabTestsVM>> GetLabTestPrescriptions();
     }

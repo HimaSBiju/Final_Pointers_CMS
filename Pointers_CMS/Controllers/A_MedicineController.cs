@@ -60,6 +60,7 @@ namespace Pointers_CMS.Controllers
 
 
         #region Update Medicine
+        [HttpPut]
         public async Task<IActionResult> UpdateEmployee([FromBody] Medicines med)
         {
             if (ModelState.IsValid)  // check the validate the code

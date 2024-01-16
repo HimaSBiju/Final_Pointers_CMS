@@ -42,10 +42,16 @@ namespace Pointers_CMS
             db.UseSqlServer(Configuration.GetConnectionString("DB_CMSConnection")));
 
 
-            //Lab Technician 
+
+
+            //Receptionist
+            services.AddScoped<IPatientRepository, PatientRepository>();
+            services.AddScoped<IRAppointmentRepository, RAppointmentRepository>();
+
+
+            //Lab Technician
             services.AddScoped<ILabTestsRepository, LabTestsRepository>();
             services.AddScoped<ILabReportsRepository, LabReportsRepository>();
-
 
             //Admin
             services.AddScoped<A_ILabTestRepository, A_LabTestRepository>();

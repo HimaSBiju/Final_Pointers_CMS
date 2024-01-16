@@ -43,14 +43,17 @@ namespace Pointers_CMS
 
 
             //Lab Technician 
-            services.AddScoped<ILabTestsRepository, ILabTestsRepository>();
-            services.AddScoped<ILabReportsRepository, ILabReportsRepository>();
+            services.AddScoped<ILabTestsRepository, LabTestsRepository>();
+            services.AddScoped<ILabReportsRepository, LabReportsRepository>();
+
 
             //Admin
             services.AddScoped<A_ILabTestRepository, A_LabTestRepository>();
             services.AddScoped<A_IMedicineRepository, A_MedicineRepository>();
             services.AddScoped<A_IStaffRepository, A_StaffRepository>();
             services.AddScoped<ILoginRepository, LoginRepository>();
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

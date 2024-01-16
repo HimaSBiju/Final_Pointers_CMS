@@ -58,6 +58,8 @@ namespace Pointers_CMS
             services.AddScoped<A_IMedicineRepository, A_MedicineRepository>();
             services.AddScoped<A_IStaffRepository, A_StaffRepository>();
             services.AddScoped<ILoginRepository, LoginRepository>();
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

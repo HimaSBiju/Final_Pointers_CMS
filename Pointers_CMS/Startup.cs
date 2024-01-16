@@ -37,7 +37,7 @@ namespace Pointers_CMS
         {
             
             services.AddControllers();
-            // connectionstring for database, inject as dependency
+            // connectionstring for database, injection as dependency
             services.AddDbContext<DB_CMSContext>(db =>
             db.UseSqlServer(Configuration.GetConnectionString("DB_CMSConnection")));
 

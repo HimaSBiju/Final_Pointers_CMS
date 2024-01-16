@@ -8,7 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Pointers_CMS.Models;
-using Pointers_CMS.Repository.A_Repository;
+using Pointers_CMS.Repository.LabRepository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,12 +30,14 @@ namespace Pointers_CMS
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            // connectionstring for database, inject as dependency
             services.AddDbContext<DB_CMSContext>(db =>
             db.UseSqlServer(Configuration.GetConnectionString("DB_CMSConnection")));
 
 
-            services.AddScoped<A_ILabTestRepository, A_LabTestRepository>();
-            services.AddScoped<A_IMedicineRepository, A_MedicineRepository>();
+            //Lab Technician 
+            services.AddScoped<ILabTestsRepository, ILabTestsRepository>();
+            services.AddScoped<ILabReportsRepository, ILabReportsRepository>();
 
         }
 

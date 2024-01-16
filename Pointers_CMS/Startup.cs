@@ -45,8 +45,8 @@ namespace Pointers_CMS
 
 
             //Lab Technician
-            services.AddScoped<ILabTestsRepository, ILabTestsRepository>();
-            services.AddScoped<ILabReportsRepository, ILabReportsRepository>();
+            services.AddScoped<ILabTestsRepository, LabTestsRepository>();
+            services.AddScoped<ILabReportsRepository, LabReportsRepository>();
 
             //Admin
             services.AddScoped<A_ILabTestRepository, A_LabTestRepository>();

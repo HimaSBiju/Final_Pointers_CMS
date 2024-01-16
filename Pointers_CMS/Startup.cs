@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -37,7 +38,10 @@ namespace Pointers_CMS
             //Lab Technician 
             services.AddScoped<ILabTestsRepository, ILabTestsRepository>();
             services.AddScoped<ILabReportsRepository, ILabReportsRepository>();
+
+            //Receptionist
             services.AddScoped<IPatientRepository, PatientRepository>();
+            services.AddScoped<IRAppointmentRepository, RAppointmentRepository>();
 
         }
 

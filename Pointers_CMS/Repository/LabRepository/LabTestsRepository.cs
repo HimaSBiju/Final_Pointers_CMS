@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Pointers_CMS.Models;
-using Pointers_CMS.ViewModel.LabTechniciamVM;
+using Pointers_CMS.ViewModel.LabTechnicianVM;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;

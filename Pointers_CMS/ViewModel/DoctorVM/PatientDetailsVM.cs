@@ -9,5 +9,7 @@
         public string BloodGroup { get; set; }
         public long PhNo { get; set; }
         public string CheckupStatus { get; set; }
+        public int PatientId { get; set; }
+
     }
 }

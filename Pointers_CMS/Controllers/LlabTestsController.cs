@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Pointers_CMS.Models;
 using Pointers_CMS.Repository.LabRepository;
-using Pointers_CMS.ViewModel.LabTechniciamVM;
+using Pointers_CMS.ViewModel.LabTechnicianVM;
 using Pointers_CMS.ViewModel.LabTechnicianVM;
 using System;
 using System.Collections.Generic;

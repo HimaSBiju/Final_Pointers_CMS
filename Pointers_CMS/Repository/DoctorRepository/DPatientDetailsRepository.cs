@@ -33,7 +33,9 @@ namespace Pointers_CMS.Repository.DoctorRepository
                                 BloodGroup = patient.BloodGrp,
                                 PhNo = patient.PhNo,
                                 CheckupStatus = appointment.CheckupStatus,
-                                PatientAge = (int)Math.Floor((DateTime.Now - patient.PatientDob).TotalDays / 365)
+                                PatientAge = (int)Math.Floor((DateTime.Now - patient.PatientDob).TotalDays / 365),
+                                PatientId = patient.PatientId,
+                                
                             };
 
                 return await query.FirstOrDefaultAsync();

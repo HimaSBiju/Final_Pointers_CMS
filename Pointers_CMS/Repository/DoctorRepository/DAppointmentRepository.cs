@@ -33,7 +33,9 @@ namespace Pointers_CMS.Repository.DoctorRepository
                             PatientGender = patient.PatientGender,
                             PatientAge = (int)Math.Floor((todayDate - patient.PatientDob).TotalDays / 365),
                             CheckupStatus = appointment.CheckupStatus,
-                            AppointmentId = appointment.AppointmentId
+                            AppointmentId = appointment.AppointmentId,
+                            PatientId=patient.PatientId,
+                            DocId=docId
                         };
 
             return await query.ToListAsync();

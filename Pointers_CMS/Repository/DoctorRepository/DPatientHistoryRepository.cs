@@ -32,13 +32,15 @@ namespace Pointers_CMS.Repository.DoctorRepository
              .Where(a => a.PatientId == patientId)
              .Select(a => new PatientHistoryVM
              {
-                 AppointmentDate = a.AppointmentDate,
+                 AppointmentDate = a.AppointmentDate.ToShortDateString(),
                  Symptoms = a.Diagnosis.Symptoms,
                  Diagnosis = a.Diagnosis.Diagnosis1,
                  Note = a.Diagnosis.Note,
                  MedicineName = a.MedicinePrescriptions.FirstOrDefault().PrescribedMedicine.MedicineName,
                  LabTestName = a.LabPrescriptions.FirstOrDefault().LabTest.TestName,
-                 LabResult = a.LabReportGeneration.FirstOrDefault().TestResult ?? "N.A"
+                 LabResult = a.LabReportGeneration.FirstOrDefault().TestResult ?? "N.A",
+                 AppointmentId = a.AppointmentId
+                
              })
              .ToListAsync();
 

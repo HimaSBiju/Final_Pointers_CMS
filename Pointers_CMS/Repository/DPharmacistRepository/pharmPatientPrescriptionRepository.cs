@@ -30,6 +30,7 @@ namespace Pointers_CMS.Repository.DPharmacistRepository
 
                     {
                         PatientId = patient.PatientId,
+                        RegisterNo= patient.RegisterNo,
                         PatientName = patient.PatientName,
                         PhoneNumber = patient.PhNo,
                         PrescribedMedicine = prescription.PrescribedMedicine.MedicineName,
@@ -55,6 +56,7 @@ namespace Pointers_CMS.Repository.DPharmacistRepository
                     select new PharmacistViewModel
                     {
                         PatientId = patient.PatientId,
+                        RegisterNo = patient.RegisterNo,
                         PatientName = patient.PatientName,
                         PhoneNumber = patient.PhNo,
                         PrescribedMedicine = prescription.PrescribedMedicine.MedicineName,

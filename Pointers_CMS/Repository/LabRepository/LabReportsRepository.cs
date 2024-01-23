@@ -1,5 +1,4 @@
 ﻿using Pointers_CMS.Models;
-using Pointers_CMS.ViewModel.LabTechniciamVM;
 using Pointers_CMS.ViewModel.LabTechnicianVM;
 using System.Collections.Generic;
 using System.Threading.Tasks;

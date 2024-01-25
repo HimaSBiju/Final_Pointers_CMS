@@ -126,6 +126,18 @@ namespace Pointers_CMS.Repository.ReceptionistRepository
         }
         #endregion
 
+        #region GetPatientById
+        public async Task<Patients> GetPatientById(int? id)
+        {
+            if (_dbContext != null)
+            {
+                var medicine = await _dbContext.Patients.FindAsync(id);   //primary key
+                return medicine;
+            }
+            return null;
+        }
+        #endregion
+
     }
 
 }

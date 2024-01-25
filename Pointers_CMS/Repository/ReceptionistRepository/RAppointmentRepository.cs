@@ -123,7 +123,8 @@ namespace Pointers_CMS.Repository.ReceptionistRepository
                 decimal registerFee;
                 if (isNewPatient)
                 {
-                    registerFee = viewModel.RegisterFees ?? 150;
+                    viewModel.RegisterFees = 250;
+                    registerFee = (decimal)viewModel.RegisterFees;
 
                 }
                 else
@@ -131,7 +132,7 @@ namespace Pointers_CMS.Repository.ReceptionistRepository
                     registerFee = viewModel.RegisterFees ?? 0;
                 }
 
-                decimal consultFees = viewModel.ConsultationFee ?? _dbContext.Doctors.Where(d => d.DocId == viewModel.DocId).Select(d => (decimal?)d.ConsultationFee).FirstOrDefault() ?? 0;
+                decimal consultFees = (decimal)viewModel.ConsultationFee;
                 decimal totalAmount = registerFee + consultFees + (0.18m * registerFee) + (0.18m * consultFees);
 
                 viewModel.RegisterFees = registerFee;

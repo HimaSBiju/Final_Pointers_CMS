@@ -67,10 +67,9 @@ namespace Pointers_CMS
             services.AddScoped<IDPatientHistoryRepository, DPatientHistoryRepository>();
             services.AddLogging();
 
-            // Pharmacist
-             services.AddScoped<IPmedicineRepository, PmedicineRepository>();
+            //Pharmacist
+            services.AddScoped<IPmedicineRepository, PmedicineRepository>();
             services.AddScoped<IpharmPatientPrescriptionRepository, pharmPatientPrescriptionRepository>();
-
             //Json Resolver
 
             services.AddControllers().AddNewtonsoftJson(options =>

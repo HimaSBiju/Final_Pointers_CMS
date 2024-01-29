@@ -1,8 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Pointers_CMS.Models;
 using Pointers_CMS.Repository.LabRepository;
-using Pointers_CMS.ViewModel.LabTechniciamVM;
 using Pointers_CMS.ViewModel.LabTechnicianVM;
 using System;
 using System.Collections.Generic;
@@ -43,44 +41,54 @@ namespace Pointers_CMS.Controllers
         {
             return await _labReportRepository.GetViewModelReport();
         }
-        #endregion
+    #endregion
 
-        #region Add an employee
-        [HttpPost]
-        public async Task<IActionResult> AddReport([FromBody] LabReportGeneration report)
+    #region Add an report
+    [HttpPost]
+    public async Task<IActionResult> AddReport([FromBody] LabReportVM report)
+    {
+      //check the validation of code
+      if (ModelState.IsValid)
+      {
+        try
         {
-            //check the validation of code
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    var ReportId = await _labReportRepository.AddReport(report);
-                    if (ReportId > 0)
-                    {
-                        return Ok(ReportId);
-                    }
-                    else
-                    {
-                        return NotFound();
-                    }
-                }
-                catch (Exception)
-                {
-                    return BadRequest();
-                }
-
-            }
-            return BadRequest(report);
+          var ReportId = await _labReportRepository.AddReport(report);
+          if (ReportId > 0)
+          {
+            return Ok(ReportId);
+          }
+          else
+          {
+            return NotFound();
+          }
         }
-        #endregion
-
-        [HttpGet]
-        [Route("Get")]
-
-        public async Task<ActionResult<GetIDVM>> GetIDViewModel()
+        catch (Exception)
         {
-            return await _labReportRepository.GetIDViewModel();
+          return BadRequest();
         }
 
+      }
+      return BadRequest(report);
     }
+    #endregion
+
+    [HttpGet]
+    [Route("Get")]
+
+    public async Task<ActionResult<GetIDVM>> GetIDViewModel(int AppointmentId)
+    {
+      var idvm = await _labReportRepository.GetIDViewModel(AppointmentId);
+      return Ok(idvm);
+    }
+
+    [HttpGet]
+    [Route("Bill")]
+
+    public async Task<ActionResult<LabBillVM>> GetLabBillVm(int ReportId)
+    {
+      var idvm = await _labReportRepository.GetBillVM(ReportId);
+      return Ok(idvm);
+    }
+
+  }
 }

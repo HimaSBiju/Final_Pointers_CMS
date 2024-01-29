@@ -41,6 +41,12 @@ namespace Pointers_CMS
             services.AddDbContext<DB_CMSContext>(db =>
             db.UseSqlServer(Configuration.GetConnectionString("DB_CMSConnection")));
 
+            //Doctor
+            services.AddScoped<IDAppointmentRepository, DAppointmentRepository>();
+            services.AddScoped<IDPatientDetailsRepository, DPatientDetailsRepository>();
+            services.AddScoped<IDDiagnosisRepository, DDiagnosisRepository>();
+            services.AddScoped<IDPatientHistoryRepository, DPatientHistoryRepository>();
+            services.AddLogging();
 
 
 
@@ -58,6 +64,27 @@ namespace Pointers_CMS
             services.AddScoped<A_IMedicineRepository, A_MedicineRepository>();
             services.AddScoped<A_IStaffRepository, A_StaffRepository>();
             services.AddScoped<ILoginRepository, LoginRepository>();
+
+
+
+            //Json Resolver
+
+            services.AddControllers().AddNewtonsoftJson(options =>
+            {
+                options.SerializerSettings.ContractResolver = new DefaultContractResolver();
+            });
+
+            //Enable Cors
+            services.AddCors();
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "Clinic Management System", Version = "v1" });
+
+                // Set the comments path for the Swagger JSON and UI.
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                c.IncludeXmlComments(xmlPath);
+            });
 
 
         }

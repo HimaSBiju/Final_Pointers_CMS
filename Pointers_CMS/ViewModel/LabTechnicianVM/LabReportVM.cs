@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace Pointers_CMS.ViewModel.LabTechnicianVM
 {
@@ -17,5 +17,11 @@ namespace Pointers_CMS.ViewModel.LabTechnicianVM
         public string Remarks { get; set; }
         public int ReportId { get; set; }
         public DateTime? ReportDate { get; set; }
-    }
+
+    public int? AppointmentId { get; set; }
+    public int? TestId { get; set; }
+    public int? StaffId { get; set; }
+
+    public int LabPrescriptionId { get; set; }
+  }
 }

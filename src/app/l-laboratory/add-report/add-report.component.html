@@ -1,0 +1,58 @@
+<!-- labadd.component.html -->
+
+<form #labForm="ngForm" (ngSubmit)="onSubmit(labForm)" class="container mt-4">
+  <!-- Appointment Section -->
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <label for="appointmentId">AppointmentId:</label>
+      <input type="text" id="appointmentId" name="appointmentId" [(ngModel)]="lLabTestsVMService.formData.AppointmentId" class="form-control" required required readonly>
+    </div>
+
+    <div class="col-md-6 mb-3">
+      <label for="patientName">PatientName:</label>
+      <input type="text" id="patientName" name="patientName" [(ngModel)]="lLabTestsVMService.formData.PatientName" class="form-control" required required readonly>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <label for="doctorName">DoctorName:</label>
+      <input type="text" id="doctorName" name="doctorName" [(ngModel)]="lLabTestsVMService.formData.DoctorName" class="form-control" required required readonly>
+    </div>
+
+    <div class="col-md-6 mb-3">
+      <label for="testName">TestName:</label>
+      <input type="text" id="testName" name="testName" [(ngModel)]="lLabTestsVMService.formData.TestName" class="form-control" required required readonly>
+    </div>
+  </div>
+
+  <!-- Lab Report Section -->
+   <div class="row">
+    <div class="col-md-6 mb-3">
+      <label for="reportId">ReportId:</label>
+      <input type="text" id="labreportId" name="labreportId" [(ngModel)]="labreportgeneration.formData.ReportId" class="form-control" required>
+    </div> 
+
+    <div class="col-md-6 mb-3">
+      <label for="reportDate">ReportDate:</label>
+      <input type="date" id="reportDate" name="reportDate" [(ngModel)]="labreportgeneration.formData.ReportDate" class="form-control" required>
+    </div>
+</div>
+
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <label for="testResult">TestResult:</label>
+      <input type="text" id="labResult" name="labResult" [(ngModel)]="labreportgeneration.formData.TestResult" class="form-control" required>
+    </div>
+
+    <div class="col-md-6 mb-3">
+      <label for="remarks">Remarks:</label>
+      <textarea id="remarks" name="remarks" [(ngModel)]="labreportgeneration.formData.Remarks" class="form-control"></textarea>
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary"(click)="generateReport()">Submit</button>
+  
+</form>
+<div><button (click)="goBack()">Back</button></div>
+

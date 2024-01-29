@@ -1,7 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Pointers_CMS.Models;
-using Pointers_CMS.ViewModel.LabTechniciamVM;
+using Pointers_CMS.ViewModel.LabTechnicianVM;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -30,6 +29,8 @@ namespace Pointers_CMS.Repository.LabRepository
                                    join d in _dbContext.Doctors on a.DocId equals d.DocId
                                    join s in _dbContext.Staffs on d.StaffId equals s.StaffId
                                    join l in _dbContext.LabTests on lp.LabTestId equals l.TestId
+                                   where lp.LabTestStatus == "pending"
+
                                    select new LabTestsVM
                                    {
                                        AppointmentId = a.AppointmentId,

@@ -1,0 +1,33 @@
+<table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Report ID</th>
+        <th>Report Date</th>
+        <th>Patient Name</th>
+        <th>Test Name</th>
+        <th>Low Range</th>
+        <th>High Range</th>
+        <th>Test Result</th>
+        <th>Remarks</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let lab of lLabReportVMService.lLabReportVM">
+        <td>{{ lab.ReportId }}</td>
+        <td>{{ lab.ReportDate | date: 'yyyy-MM-dd' }}</td>
+        <td>{{ lab.PatientName }}</td>
+        <td>{{ lab.TestName }}</td>
+        <td>{{ lab.LowRange }}</td>
+        <td>{{ lab.HighRange }}</td>
+        <td>{{ lab.TestResult }}</td>
+        <td>{{ lab.Remarks }}</td>
+        <td>
+          <button class="btn btn-info" (click)="generateBill(lab)">Generate Bill</button>
+          
+          <button class="btn btn-info" (click)="ViewReport(lab)">View</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  

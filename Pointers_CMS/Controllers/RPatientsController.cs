@@ -175,5 +175,25 @@ public async Task<IActionResult> DisableStatus(int patientId)
 
         }
         #endregion
+
+        #region Getpatient By id
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Patients>> GetPatientById(int? id)
+        {
+            try
+            {
+                var med = await _patientRepository.GetPatientById(id);
+                if (med == null)
+                {
+                    return NotFound();
+                }
+                return Ok(med);
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
+        }
+        #endregion
     }
 }

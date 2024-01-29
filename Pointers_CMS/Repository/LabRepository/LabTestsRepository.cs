@@ -37,7 +37,8 @@ namespace Pointers_CMS.Repository.LabRepository
                                        PatientName = p.PatientName,
                                        TestName = l.TestName,
                                        DoctorName = s.FullName, // Changed from "staff_Name" to "fullName"
-                                       LabTestStatus = lp.LabTestStatus
+                                       LabTestStatus = lp.LabTestStatus,
+                                       TestId=lp.LabTestId,
                                    };
 
 

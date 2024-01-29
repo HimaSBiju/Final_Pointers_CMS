@@ -15,6 +15,7 @@ namespace Pointers_CMS.Repository.ReceptionistRepository
 
         Task<List<Patients>> GetAllDisabledPatients();
         Task<Patients> EnableStatus(int? paitientId);
+        Task<Patients> GetPatientById(int? id);
 
 
 
